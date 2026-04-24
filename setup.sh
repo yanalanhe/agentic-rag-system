@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# Hands-On: Agentic RAG System
+# Agentic RAG System
 # =============================================================================
 set -euo pipefail
 
@@ -37,18 +37,6 @@ command -v npm     >/dev/null 2>&1 || err "npm required"
 PY_VER=$("$PYTHON_CMD" --version | awk '{print $2}')
 NODE_VER=$(node --version)
 log "Python: ${PY_VER} | Node: ${NODE_VER}"
-
-# ─── Directory Structure ──────────────────────────────────────────────────────
-header "Creating Project Structure"
-mkdir -p "${BACKEND_DIR}/agents"
-mkdir -p "${BACKEND_DIR}/core"
-mkdir -p "${BACKEND_DIR}/api"
-mkdir -p "${BACKEND_DIR}/data/chroma_data"
-mkdir -p "${DATA_DIR}/documents"
-mkdir -p "${SCRIPTS_DIR}"
-mkdir -p "${FRONTEND_DIR}/src/components"
-mkdir -p "${FRONTEND_DIR}/public"
-log "Directory structure created"
 
 # ─── Python Virtual Environment ──────────────────────────────────────────────
 header "Setting Up Python Environment"
