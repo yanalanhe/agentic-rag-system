@@ -62,21 +62,6 @@ The system is built for reliable enterprise retrieval workflows, with self-corre
 
 ---
 
-## Suggested Next README Sections
-
-To make this production-ready, consider adding:
-
-- **Setup & Installation**
-- **Environment Variables**
-- **How to Run (backend + frontend)**
-- **Seeding Instructions**
-- **API Endpoints**
-- **Trace Event Schema**
-- **Troubleshooting**
-- **Roadmap**
-
----
-
 ## Usage
 
 Run commands from the project root in this order.
