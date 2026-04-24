@@ -1,0 +1,63 @@
+{
+  "trace_id": "a78eeb57-0c93-46eb-952d-29d940e0953d",
+  "start_time": 1776457624.069075,
+  "end_time": 1776457625.891725,
+  "duration_ms": 1822.65,
+  "final_state": "done",
+  "events": [
+    {
+      "trace_id": "a78eeb57-0c93-46eb-952d-29d940e0953d",
+      "agent": "retriever",
+      "state": "retrieving",
+      "input": {
+        "sub_queries": [
+          "Describe the AI deployment guidelines for production models."
+        ],
+        "attempt": 1
+      },
+      "output": {
+        "chunks_found": 3,
+        "top_score": 0.4814
+      },
+      "latency_ms": 90.71,
+      "timestamp": 1776457624.1597888,
+      "attempt": 1,
+      "error": null
+    },
+    {
+      "trace_id": "a78eeb57-0c93-46eb-952d-29d940e0953d",
+      "agent": "synthesizer",
+      "state": "synthesizing",
+      "input": {
+        "query": "Describe the AI deployment guidelines for production models.",
+        "chunks_used": 3
+      },
+      "output": {
+        "response_length": 219,
+        "citations": 1,
+        "tokens_used": 500
+      },
+      "latency_ms": 1731.94,
+      "timestamp": 1776457625.891725,
+      "attempt": 1,
+      "error": null
+    }
+  ],
+  "result": {
+    "trace_id": "a78eeb57-0c93-46eb-952d-29d940e0953d",
+    "query": "Describe the AI deployment guidelines for production models.",
+    "response": "Our AI deployment guidelines require all production models to pass security review and bias assessment before release [1]. Additionally, models must achieve greater than 95% accuracy on the internal benchmark suite [1].",
+    "citations": [
+      {
+        "marker": "[1]",
+        "chunk_id": "d72048a8-01b7-496f-a4ba-b8a15b961c25",
+        "source": "ai_deployment_guidelines.md",
+        "text_snippet": "Our AI deployment guidelines require all production models to pass security review and bias assessme"
+      }
+    ],
+    "tokens_used": 500,
+    "latency_ms": 1731.94,
+    "quality_score": 0.11,
+    "pipeline_state": "done"
+  }
+}

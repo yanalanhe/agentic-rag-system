@@ -1,0 +1,56 @@
+{
+  "trace_id": "aa7d79ba-7b33-40d5-a4af-5034077de61b",
+  "start_time": 1776393490.7861824,
+  "end_time": 1776393491.7339542,
+  "duration_ms": 947.77,
+  "final_state": "done",
+  "events": [
+    {
+      "trace_id": "aa7d79ba-7b33-40d5-a4af-5034077de61b",
+      "agent": "retriever",
+      "state": "retrieving",
+      "input": {
+        "sub_queries": [
+          "What was our Q3 2025 revenue growth?"
+        ],
+        "attempt": 1
+      },
+      "output": {
+        "chunks_found": 3,
+        "top_score": 0.5051
+      },
+      "latency_ms": 494.73,
+      "timestamp": 1776393491.2809112,
+      "attempt": 1,
+      "error": null
+    },
+    {
+      "trace_id": "aa7d79ba-7b33-40d5-a4af-5034077de61b",
+      "agent": "synthesizer",
+      "state": "synthesizing",
+      "input": {
+        "query": "What was our Q3 2025 revenue growth?",
+        "chunks_used": 3
+      },
+      "output": {
+        "response_length": 184,
+        "citations": 0,
+        "tokens_used": 0
+      },
+      "latency_ms": 437.42,
+      "timestamp": 1776393491.7183268,
+      "attempt": 1,
+      "error": null
+    }
+  ],
+  "result": {
+    "trace_id": "aa7d79ba-7b33-40d5-a4af-5034077de61b",
+    "query": "What was our Q3 2025 revenue growth?",
+    "response": "Synthesis error: 404 This model models/gemini-2.0-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.",
+    "citations": [],
+    "tokens_used": 46,
+    "latency_ms": 437.42,
+    "quality_score": 0.5,
+    "pipeline_state": "done"
+  }
+}
