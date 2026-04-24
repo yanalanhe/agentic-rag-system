@@ -248,7 +248,8 @@ export default function App() {
         <div>
           <div style={{ fontSize: 16, fontWeight: 700 }}>Agentic RAG Pipeline</div>         
         </div>
-        <div style={styles.pill}>PLANNER → RETRIEVER → VALIDATOR → SYNTHESIZER</div>
+        <div style={styles.pill}>Multi-agents PLANNER → RETRIEVER → VALIDATOR → SYNTHESIZER 
+          <div>built for reliable enterprise retrieval workflows, with self-correction, full traceability, and a live orchestration</div></div>
         {result && <div style={{ ...styles.pill, marginLeft: 'auto', background: '#63b3ed22', color: '#63b3ed', borderColor: '#63b3ed44' }}>
           {(result.latency_ms > 0 ? result.latency_ms + 'ms' : '—')} · {(result.tokens_used > 0 ? result.tokens_used + ' tokens' : '—')}
         </div>}
