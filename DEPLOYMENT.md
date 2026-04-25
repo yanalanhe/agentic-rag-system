@@ -36,7 +36,8 @@ ChromaDB Vector Store
 4. Configure the project:
    - **Project Name**: `agentic-rag-backend` (or your choice)
    - **Framework**: Select **Other**
-   - **Root Directory**: Leave empty (root of repo)
+   - **Root Directory**: Leave empty (`.` or root of repo — NOT `backend/`)
+     - ℹ️ This must be the root because `main.py`, `vercel.json`, and `requirements.txt` are all at the repo root
    - Click **Deploy**
 
 ### Step 2: Add Environment Variables

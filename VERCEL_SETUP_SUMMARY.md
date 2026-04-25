@@ -39,11 +39,13 @@ You've chosen to deploy **both frontend and backend on Vercel** as separate apps
 1. Go to https://vercel.com/new
 2. Import this repository
 3. Name it: `agentic-rag-backend`
-4. Set environment variables:
+4. **Root Directory**: Leave empty (root of repo, NOT `backend/`)
+   - This finds `main.py` and `vercel.json` at the root
+5. Set environment variables:
    - `GEMINI_API_KEY` = your API key
    - `PYTHONUNBUFFERED` = `1`
-5. Deploy
-6. **Save the backend URL** (e.g., `https://agentic-rag-backend.vercel.app`)
+6. Deploy
+7. **Save the backend URL** (e.g., `https://agentic-rag-backend.vercel.app`)
 
 ### Step 2: Deploy Frontend
 1. Go to https://vercel.com/new
