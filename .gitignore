@@ -47,8 +47,8 @@ Thumbs.db
 .docker/
 
 # generated / runtime
-agentic-rag-system/.venv/
-agentic-rag-system/frontend/node_modules/
-agentic-rag-system/backend/data/chroma_data/
-agentic-rag-system/backend/data/audit_logs/
-agentic-rag-system/.cache/
+.venv/
+frontend/node_modules/
+backend/data/chroma_data/
+backend/data/audit_logs/
+.cache/
