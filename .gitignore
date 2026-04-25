@@ -32,6 +32,7 @@ Thumbs.db
 
 # Logs and data
 *.log
+*.pid
 .cache/
 *.sqlite3
 
