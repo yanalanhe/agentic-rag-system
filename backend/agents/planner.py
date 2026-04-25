@@ -13,7 +13,11 @@ from ..core.genai_retry import with_429_retry
 import google.generativeai as genai
 import os
 
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+# Configure API key if available; will be set at runtime if not
+_api_key = os.environ.get("GEMINI_API_KEY")
+if _api_key:
+    genai.configure(api_key=_api_key)
+
 # Default to flash-lite for free-tier quota (15 RPM, 1000 RPD); override with GEMINI_MODEL
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash-lite")
 
