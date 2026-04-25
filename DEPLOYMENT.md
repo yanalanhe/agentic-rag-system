@@ -45,10 +45,16 @@ ChromaDB Vector Store
 1. After the project is created, go to **Settings** → **Environment Variables**
 2. Add these variables:
 
-   | Key | Value |
-   |-----|-------|
-   | `GEMINI_API_KEY` | Your API key from https://aistudio.google.com/apikey |
-   | `PYTHONUNBUFFERED` | `1` |
+   | Key | Value | Required |
+   |-----|-------|----------|
+   | `GEMINI_API_KEY` | Your API key from https://aistudio.google.com/apikey | ✅ Yes |
+   | `PYTHONUNBUFFERED` | `1` | ✅ Yes |
+   | `GEMINI_MODEL` | `gemini-2.0-flash-lite` (or other model) | ❌ Optional |
+
+   **About `GEMINI_MODEL`**:
+   - Default: `gemini-2.0-flash-lite` (free tier friendly)
+   - Alternative: `gemini-2.0-flash` (faster, higher quota)
+   - See [Google AI Studio](https://aistudio.google.com) for available models
 
 3. Click **Save**
 

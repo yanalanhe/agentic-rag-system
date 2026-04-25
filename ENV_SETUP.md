@@ -9,9 +9,15 @@ In your **backend project** on Vercel, set these environment variables:
 **Settings** → **Environment Variables**
 
 ```
-GEMINI_API_KEY=sk-...     # Get from https://aistudio.google.com/apikey
-PYTHONUNBUFFERED=1        # For real-time logging
+GEMINI_API_KEY=sk-...              # Required: Get from https://aistudio.google.com/apikey
+PYTHONUNBUFFERED=1                 # Required: For real-time logging
+GEMINI_MODEL=gemini-2.0-flash-lite # Optional: Model to use (default shown)
 ```
+
+**GEMINI_MODEL Options**:
+- `gemini-2.0-flash-lite` — Default, free tier friendly, slower
+- `gemini-2.0-flash` — Faster, higher quotas, better for production
+- See https://aistudio.google.com for latest available models
 
 ## Frontend (Vercel) Variables
 
