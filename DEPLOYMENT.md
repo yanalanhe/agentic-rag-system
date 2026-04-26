@@ -42,7 +42,9 @@ Vector Database (File-based or Managed)
    - `GOOGLE_CLOUD_UNIVERSE_DOMAIN` = `googleapis.com`
    - `GRPC_PYTHON_BUILD_WITH_CYTHON` = `false`
 4. Deploy and copy your public URL
-5. **⚠️ Important**: Seed knowledge base via `/docs` endpoint
+5. **⚠️ Important**: Set up auto-seeding or manually seed knowledge base
+   - **Recommended**: Add post-deploy command: `python -m backend.seed_knowledge_base`
+   - **Or**: Manually seed via `/docs` endpoint after each deploy
 
 See [RAILWAY_DEPLOYMENT.md](./RAILWAY_DEPLOYMENT.md) for detailed steps and troubleshooting.
 

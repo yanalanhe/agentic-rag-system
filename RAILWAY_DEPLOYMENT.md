@@ -75,7 +75,28 @@ Railway's filesystem is **ephemeral**. This means:
 
 ### Solution: Seed the Knowledge Base
 
-After deployment, you **must** seed the knowledge base:
+After deployment, you **must** seed the knowledge base. Choose one approach:
+
+#### Recommended: Auto-Seed on Every Deploy
+
+To avoid manual re-seeding after each git push, enable automatic seeding:
+
+1. Go to Railway → Backend service → **Settings**
+2. Scroll to find **Post-Deploy Command** field (or **Build Command**)
+3. Add command:
+   ```
+   python -m backend.seed_knowledge_base
+   ```
+4. Save
+
+Now every deployment automatically seeds the knowledge base with documents from `seed_knowledge_base.py`.
+
+**Benefits**:
+- ✅ Zero manual work
+- ✅ Knowledge base repopulated after every git push
+- ✅ Consistent data across deployments
+
+#### Manual: Seed via API (If Auto-Seed Not Set)
 
 #### Option 1: Via API Docs (Easiest)
 
@@ -135,6 +156,54 @@ See [PERSISTENT_VECTOR_DB.md](./PERSISTENT_VECTOR_DB.md) for using Pinecone, Wea
 - `GEMINI_MODEL` — Model to use (default: `gemini-2.0-flash-lite`)
 - `GOOGLE_CLOUD_UNIVERSE_DOMAIN` — Fixes GCP metadata service timeout
 - `GRPC_PYTHON_BUILD_WITH_CYTHON` — Prevents gRPC compilation issues
+
+---
+
+## Git Push → Automatic Redeployment
+
+**Important**: By default, Railway automatically redeploys when you push to GitHub.
+
+### How It Works
+
+```
+You: git push to main
+       ↓
+Railway: Detects new commit
+       ↓
+Railway: Pulls code and rebuilds
+       ↓
+Railway: Redeploys backend (~2 minutes)
+       ↓
+Knowledge base is reset (ephemeral storage)
+```
+
+### What This Means
+
+Every git push causes:
+- ✅ Automatic redeployment (good for CI/CD)
+- ❌ Knowledge base to be lost (bad for data)
+
+### Solutions
+
+**Option 1: Auto-Seed on Deploy** (Recommended)
+- Add post-deploy command (see "Auto-Seed" section above)
+- Knowledge base automatically repopulated
+- Zero manual work
+
+**Option 2: Manual Re-seed After Push**
+- After each git push, visit `/docs` → `/ingest`
+- Add documents manually
+- Takes ~2 minutes
+
+**Option 3: Disable Auto-Deploy**
+- Railway → Backend → Settings → **Auto Deploy** → OFF
+- Manually trigger deploys only when ready
+- More control, but requires manual action
+
+**Option 4: Use Persistent Vector DB**
+- Set up Pinecone or Weaviate (see PERSISTENT_VECTOR_DB.md)
+- Data never lost
+- Best for production
 
 ---
 
