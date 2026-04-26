@@ -1,4 +1,8 @@
 # Agentic RAG System
+# Use CPU-only PyTorch to reduce image size (GPU not needed on Railway)
+--index-url https://download.pytorch.org/whl/cpu
+torch==2.0.1
+
 fastapi==0.115.5
 uvicorn[standard]==0.32.1
 pydantic==2.10.3
