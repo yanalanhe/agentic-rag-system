@@ -1,6 +1,6 @@
 # Agentic RAG System
 
-An end-to-end, executable Agentic RAG platform implementing a **four-agent pipeline**:
+An end-to-end, executable Agentic RAG platform implementing a **multi-agents pipeline**:
 
 **Planner → Retriever → Validator → Synthesizer**
 

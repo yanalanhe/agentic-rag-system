@@ -281,7 +281,7 @@ export default function App() {
           <div style={styles.inputRow}>
             <input
               style={styles.input}
-              placeholder="Ask a question about enterprise knowledge..."
+              placeholder="Ask a question about enterprise knowledge or select one demo query on left panel..."
               value={query}
               onChange={e => setQuery(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && submit()}
